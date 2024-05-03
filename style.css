@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+	--clr-neutral-100: hsl(0 0% 100);
+	--clr-neutral-200: hsl(225, 100%, 98%);
+	--clr-neutral-400: hsla(224, 23%, 55%, 1);
+	--clr-neutral-800: hsl(223, 47%, 23%);
+
+	--clr-primary-200: hsl(225, 100%, 94%);
+	--clr-primary-300: hsla(245, 83%, 68%, 1);
+	--clr-primary-400: hsl(245, 75%, 52%);
+
+	--fs-700: 1.75rem;
+	--fs-400: 1rem;
+	--fs-300: 0.875rem;
+
+	--fw-400: 500;
+	--fw-700: 700;
+	--fw-900: 900;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+	list-style: none;
+}
+
+/* Set core body defaults */
+body {
+	min-height: 100vh;
+	line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+	line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+	text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+	color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+	max-width: 100%;
+	display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+	font-family: inherit;
+	font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+	min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+	scroll-margin-block: 5ex;
+}
+
+/* Start of styles */
+
+body {
+	font-family: 'Red Hat Display', sans-serif;
+	font-size: var(--fs-400);
+	font-weight: var(--fw-400);
+	line-height: 1.2;
+	color: var(--clr-neutral-400);
+	background: var(--clr-primary-200);
+
+	/*DEMO CENTER card*/
+	display: grid;
+	min-height: 100vh;
+	place-items: center;
+}
+
+h1,
+h2,
+h3 {
+	line-height: 1.1;
+}
+
+h2 {
+	font-size: var(--fs-700);
+	color: var(--clr-neutral-800);
+}
+
+/* Composition */
+.flow > :where(:not(:first-child)) {
+	margin-top: var(--flow-spacer, 1em);
+}
+.flow-sm > :where(:not(:first-child)) {
+	margin-top: var(--flow-spacer, 0.25em);
+}
+
+.grid-flow {
+	display: grid;
+	gap: 1em;
+}
+
+.flex-row {
+	display: flex;
+
+	gap: var(--gap, 1em);
+}
+
+.push-right {
+	margin-left: auto;
+}
+/* Utility */
+
+.padding-48 {
+	padding: 3rem;
+}
+
+.padding-24 {
+	padding: 1.5rem;
+}
+
+.text-neutral-800 {
+	color: var(--clr-neutral-800);
+}
+.text-neutral-400 {
+	color: var(--clr-neutral-400);
+}
+
+.bg-neutral-100 {
+	background-color: var(--clr-neutral-100);
+}
+
+.bg-neutral-200 {
+	background-color: var(--clr-neutral-200);
+}
+
+.text-align-left {
+	text-align: start;
+}
+.text-align-center {
+	text-align: center;
+}
+.text-align-right {
+	text-align: end;
+}
+
+.fw-black {
+	font-weight: var(--fw-900);
+}
+.fw-700 {
+	font-weight: var(--fw-700);
+}
+.fw-400 {
+	font-weight: var(--fw-400);
+}
+
+.br-1 {
+	border-radius: 0.5rem;
+}
+.br-2 {
+	border-radius: 1rem;
+}
+
+a,
+.link {
+	text-decoration: underline;
+	border: none;
+	background-color: var(--clr-neutral-200);
+	color: var(--clr-primary-300);
+}
+.link:hover,
+.link:focus,
+a:hover,
+a:focus {
+	cursor: pointer;
+	text-decoration: none;
+	color: var(--clr-primary-400);
+}
+
+/* Block */
+
+.card {
+	max-width: 450px;
+	overflow: hidden;
+}
+
+.button {
+	text-decoration: none;
+	border: none;
+
+	padding: 1rem;
+}
+.button:hover {
+	cursor: pointer;
+}
+.button[data-type='primary'] {
+	background-color: var(--clr-primary-400);
+	color: var(--clr-neutral-200);
+	width: 100%;
+	box-shadow: 0px 7px 10px 0px hsla(245, 75%, 52%, 0.2);
+}
+.button[data-type='primary']:hover,
+.button[data-type='primary']:focus {
+	background-color: var(--clr-primary-300);
+	box-shadow: 0px 7px 10px 0px hsla(245, 83%, 68%, 0.2);
+}
+
+.button[data-type='neutral'] {
+	background-color: transparent;
+	padding: 0;
+}
+.button[data-type='neutral']:hover,
+.button[data-type='neutral']:focus {
+	color: transparent;
+}
